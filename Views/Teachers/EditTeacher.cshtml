@@ -1,0 +1,19 @@
+﻿@model MyInterMVCApp.Models.Teacher
+
+<form method="post" asp-action="EditTeacher">
+    <input type="hidden" name="Id" value="@Model.Id
+" />
+    <label>FullName</label>
+    <input type="text" name="FullName" value="@Model.FullName" />
+
+    <label>Subject</label>
+    <input type="text" name="Subject" value="@Model.Subject" />
+
+    <label>Email</label>
+    <input type="text" name="Email" value="@Model.Email" />
+
+    <br />
+    <button type="submit">Edit</button>
+
+    <a asp-action="Index">Cancel</a>
+</form>

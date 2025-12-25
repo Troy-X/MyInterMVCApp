@@ -1,0 +1,26 @@
+﻿@model List<MyInterMVCApp.Models.Course>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Code</th>
+        <th>Units</th>
+    </tr>
+
+    @foreach(var c in Model)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.Title</td>
+            <td>@c.Code</td>
+            <td>@c.Units</td>
+            <td>
+                <a asp-action="EditCourse" asp-route-id="@c.Id">Edit</a>
+                <a asp-action="DeleteCourse" asp-route-id="@c.Id" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-action="AddCourse">Add Course</a>

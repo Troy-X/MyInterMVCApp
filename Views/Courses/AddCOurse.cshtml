@@ -1,0 +1,16 @@
+﻿@model CourseViewModel
+
+<form method="post" asp-action="AddStudent">
+   
+    <label>Title</label>
+    <input type="text" name="Title" class="form-control" />
+
+    <label>Code</label>
+    <input type="text" name="Code" class="form-control" />
+
+    <label>Units</label>
+    <input type="number" name="Units" class="form-control" />
+
+    <br />
+    <button asp-action="AddCourse" type="submit">Add Course</button>
+</form>

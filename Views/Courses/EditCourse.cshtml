@@ -1,0 +1,19 @@
+﻿@model CourseViewModel
+
+<form method="post" asp-action="EditCourse">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <label>Title</label>
+    <input type="text" name="Title" value="@Model.Title" />
+
+    <label>Code</label>
+    <input type="text" name="Code" value="@Model.Code" />
+
+    <label>Units</label>
+    <input type="number" name="Units" value="@Model.Units" />
+
+    <br />
+    <button asp-action="EditCourse" type="submit"> Edit</button>
+
+    <a asp-action="Index">Cancel</a>
+</form>

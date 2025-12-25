@@ -1,0 +1,17 @@
+﻿@model MyInterMVCApp.Models.Teacher
+
+<form method="post" asp-action="AddTeacher">
+    
+
+    <label>FullName</label>
+    <input type="text" name="FullName" class="form-control" />
+
+    <label>Subject</label>
+    <input type="text" name="Subject" class="form-control" />
+
+    <label>Email</label>
+    <input type="text" name="Email" class="form-control" />
+
+    <br />
+    <button asp-action="AddTeacher" type="submit">Add Teacher</button>
+</form>

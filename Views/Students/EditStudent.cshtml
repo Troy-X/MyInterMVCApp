@@ -1,0 +1,18 @@
+﻿@model StudentViewModel
+
+<form method="post" asp-action="EditStudent">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <label>Name</label>
+    <input type="text" name="Name" value="@Model.Name" />
+
+    <label>Class</label>
+    <input type="text" name="Class" value="@Model.Class" />
+
+    <br />
+    <button class="btn btn-primary" type="submit">Edit</button>
+
+</form>
+
+<br />
+<a asp-action="Index" class="btn btn-secondary">Cancel</a>

@@ -1,0 +1,25 @@
+﻿@model List<MyInterMVCApp.Models.Department>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Action</th>
+    </tr>
+    
+    @foreach(var d in Model)
+    {
+        <tr>
+            <td>@d.Id</td>
+            <td>@d.Name</td>
+            <td>@d.Location</td>
+            <td>
+                <a asp-action="EditDepartment" asp-route-id="@d.Id">Edit</a>
+                <a asp-action="DeleteDepartment" onclick="return confirm('Are you sure?')" asp-route-id="@d.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-action="AddDepartment">Add Department</a>

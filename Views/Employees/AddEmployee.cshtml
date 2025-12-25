@@ -1,0 +1,17 @@
+﻿@model EmployeeViewModel
+
+<form method="post" asp-action="AddEmployee">
+    <label>Name</label>
+    <input type="text" name="Name" class="form-control" />
+
+    <label>Position</label>
+    <input type="text" name="Position" class="form-control" />
+
+    <label>Salary</label>
+    <input type="number" name="Salary" class="form-control" />
+
+    <br />
+    <button class="btn btn-success btn-sm me-1" type="submit">Create</button>
+
+    <a asp-controller="Employees" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

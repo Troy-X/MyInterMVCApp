@@ -1,0 +1,31 @@
+﻿@model List<MyInterMVCApp.Models.Employee>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var e in Model)
+        {
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Name</td>
+                <td>@e.Position</td>
+                <td>@e.Salary</td>
+                <td>
+                    <a asp-controller="Employees" asp-action="EditEmployee" asp-route-id="@e.Id" class="btn btn-warning btn-sm me-1">Edit</a>
+                    <a asp-controller="Employees" asp-action="DeleteEmployee" asp-route-id="@e.Id" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Employees" class="btn btn-secondary" asp-action="AddEmployee">Create</a>

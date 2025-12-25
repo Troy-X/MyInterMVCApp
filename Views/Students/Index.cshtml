@@ -1,0 +1,42 @@
+﻿@model List<MyInterMVCApp.Models.Student>
+
+<form method="get" asp-action="Index">
+    <input type="text" name="searchTerm" value="@Context.Request.Query["searchTerm"]" placeholder="seach Name.." />
+
+    <select name="clas" class="row-cols-1">
+        <option value="">--All Levels--</option>
+        <option value="100Level">100Level</option>
+        <option value="200Level">200Level</option>
+        <option value="300Level">300Level</option>
+        <option value="400Level">400Level</option>
+        <option value="500Level">500Level</option>
+    </select>
+
+    <a asp-action="Index" asp-route-sortOrder="name_desc">Name ↓</a>
+    <a asp-action="Index" asp-route-sortOrder="class_desc">Class ↓></a>
+
+    <button type="submit">Search</button>
+</form>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Class</th>
+    </tr>
+
+    @foreach(var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.Name</td>
+            <td>@s.Class</td>
+            <td>
+                <a asp-action="EditStudent" asp-route-id="@s.Id">Edit</a>
+
+                <a asp-action="DeleteStudent" asp-route-id="@s.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-controller="Students" asp-action="AddStudent" class="btn btn-outline-secondary">Add New Student</a>
